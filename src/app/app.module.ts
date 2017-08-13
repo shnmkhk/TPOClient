@@ -20,6 +20,9 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { MedicinesPage } from '../pages/medicines/medicines';
+import { UploadPrescriptionPage } from '../pages/upload-prescription/upload-prescription';
+import { ThankyouPage } from '../pages/thankyou/thankyou';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -33,7 +36,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { FileChooser } from '@ionic-native/file-chooser';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function HttpLoaderFactory(http: Http) {
@@ -71,7 +74,10 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    MedicinesPage,
+    UploadPrescriptionPage,
+    ThankyouPage
   ],
   imports: [
     BrowserModule,
@@ -102,7 +108,10 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    MedicinesPage,
+    UploadPrescriptionPage,
+    ThankyouPage
   ],
   providers: [
     Api,
@@ -114,7 +123,8 @@ export function provideSettings(storage: Storage) {
     StatusBar,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    FileChooser
   ]
 })
 export class AppModule { }

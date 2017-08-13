@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'MEDICINES_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="actionType">
+      <ion-segment-button value="select-pharmacy">
+        {{ 'MEDICINES_ACTIONTYPE_SELECT_PHARMACY' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="select-medicine">
+        {{ 'MEDICINES_ACTIONTYPE_SELECT_MEDICINE' | translate}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="actionType">
+    <ion-list *ngSwitchCase="'select-pharmacy'">
+      <ion-item>
+        <ion-label>{{'MEDICINES_SELECT_LOCATION' | translate}}</ion-label>
+        <ion-select [(ngModel)]="location" (ionChange)="pharmacies = null">
+          <ion-option value="asraonagar">A S Rao Nagar</ion-option>
+          <ion-option value="bachupally">Bachupally</ion-option>
+          <ion-option value="ecilxroads">ECIL X Roads</ion-option>
+          <ion-option value="kukatpally">Kukatpally</ion-option>
+          <ion-option value="lingampally">Lingampally</ion-option>
+          <ion-option value="madhapur">Madhapur</ion-option>
+          <ion-option value="miyapur">Miyapur</ion-option>
+          <ion-option value="nizampet">Nizampet Road/ Village</ion-option>
+        </ion-select>
+      </ion-item>
+      <div padding [ngSwitch]="location">
+        <ion-list radio-group [(ngModel)]="pharmacies" *ngSwitchCase="'ecilxroads'">
+          <ion-item>
+            <ion-label>Rama Pharmacy, ECIL X Roads</ion-label>
+            <ion-radio value="ramaecil" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Babu medicals, ECIL X Roads</ion-label>
+            <ion-radio value="babumedicals"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Srinivasa surgicals, ECIL X Roads</ion-label>
+            <ion-radio value="srinivasasurgicals" [disabled]="isDisabled"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-list radio-group [(ngModel)]="pharmacies" *ngSwitchCase="'bachupally'">
+          <ion-item>
+            <ion-label>Jahnavi medicals, Bachupally X Roads</ion-label>
+            <ion-radio value="ramaecil" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sai seshu medicals, Bachupally X Roads</ion-label>
+            <ion-radio value="babumedicals"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ranga surgicals, Bachupally X Roads</ion-label>
+            <ion-radio value="srinivasasurgicals" [disabled]="isDisabled"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-list radio-group [(ngModel)]="pharmacies" *ngSwitchCase="'kukatpally'">
+          <ion-item>
+            <ion-label>Raju Pharmacy, Kukatpally Y Junction</ion-label>
+            <ion-radio value="ramaecil" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ravi medicals, KPHB Busstop</ion-label>
+            <ion-radio value="babumedicals"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sekhar medicals, Kukatpally</ion-label>
+            <ion-radio value="srinivasasurgicals" [disabled]="isDisabled"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div padding>
+        <button ion-button color="primary" [disabled]="!pharmacies" block (click)="navigateToUpload()">{{ 'NEXT_SELECT_PHARMACY' | translate }}</button>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'select-medicine'">
+      <ion-item>
+        <h2>Not yet implemeted this flow</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

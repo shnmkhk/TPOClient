@@ -21,6 +21,17 @@
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label fixed>{{ 'DOB' | translate }}</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="account.dob" name="dob"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'MOBILE_NUMBER' | translate }}</ion-label>
+        <ion-input type="tel" [(ngModel)]="account.mobile" name="mobile"></ion-input>
+      </ion-item>
+
+
       <!--
       Want to add a Username? Here you go:
 
@@ -34,6 +45,30 @@
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'ADDRESS_HEADER' | translate }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>{{ 'ADDRESS_LINE_1' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.addr_1" name="addr_1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'ADDRESS_LINE_2' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.addr_2" name="addr_2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'ADDRESS_CITY' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.city" name="city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'ADDRESS_PINCODE' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.pincode" name="pincode"></ion-input>
+      </ion-item>
+
 
       <div padding>
         <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>

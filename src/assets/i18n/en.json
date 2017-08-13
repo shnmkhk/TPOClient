@@ -3,13 +3,36 @@
 
   "NAME": "Name",
   "EMAIL": "Email",
+  "EMAIL_OR_MOBILE":"Email/ Mobile",
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
+  "MEDICINES_TITLE":"Prescription medicines",
+  "MEDICINES_ACTIONTYPE_SELECT_PHARMACY":"Pharmacy",
+  "MEDICINES_ACTIONTYPE_SELECT_MEDICINE":"Medicine",
+  "MEDICINES_ACTIONTYPE_LABEL":"Select",
+  "MEDICINES_SELECT_LOCATION":"Location",  
+  "NEXT_SELECT_PHARMACY":"Proceed",
+  "UPLOAD_PRESCRIPTIONS_TITLE":"Upload prescription",
+  "SELECT_FILE_UPLOAD":"Browse",
+  "UPLOAD_CHOOSE_FILE":"Click on browse to select the prescription file",
+  "PROCESS_UPLOADED_FILE":"Submit",
+  "THANKYOU_MESSAGE":"Order# 235447. Please track your order here",
+  "THANKYOU_MESSAGE_TITLE":"Order received",
+  "FAVOURITE_PHARMACY":"Favourite",
+  "PLACE_ANOTHER_ORDER":"Place another order",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Search",
+  "DOB":"Date of birth",
+  "MOBILE_NUMBER":"Mobile#",
+  "ADDRESS_HEADER":"Address",
+  "ADDRESS_LINE_1":"Line #1",
+  "ADDRESS_LINE_2":"Line #2",
+  "ADDRESS_CITY":"City",
+  "ADDRESS_PINCODE":"Pincode",
+
+  "TAB1_TITLE": "Medicines",
+  "TAB2_TITLE": "OTC",
   "TAB3_TITLE": "Settings",
 
   "MAP_TITLE": "Map",
@@ -28,7 +51,7 @@
 
   "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
 
-  "WELCOME_INTRO" : "The starting point for your next great Ionic app",
+  "WELCOME_INTRO" : "",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",
@@ -63,6 +86,6 @@
 
   "CARDS_TITLE": "Social",
 
-  "SEARCH_TITLE": "Search",
+  "SEARCH_TITLE": "Over The Counter (OTC)",
   "SEARCH_PLACEHOLDER" : "Search the items list, e.g. \"Donald Duck\""
 }

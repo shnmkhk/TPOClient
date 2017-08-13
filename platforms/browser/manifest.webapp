@@ -1,0 +1,10 @@
+{
+  "name": "TPO Client",
+  "description": "TPO Client is an interface to the customer who places medicines order",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/logo.png"
+  },
+  "default_locale": "en",
+  "type": "privileged"
+}

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'UPLOAD_PRESCRIPTIONS_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-label>{{ 'UPLOAD_CHOOSE_FILE' | translate}} </ion-label>
+    <button ion-button block (click)="chooseFile()">{{'SELECT_FILE_UPLOAD' | translate}}</button>
+    <ion-label>{{ selectedFilePath }}</ion-label>
+    <button [disabled]="!selectedFilePath" ion-button block (click)="uploadFile()">{{'PROCESS_UPLOADED_FILE' | translate}}</button>
+  </div>
+</ion-content>

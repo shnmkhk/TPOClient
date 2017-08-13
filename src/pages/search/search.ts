@@ -13,32 +13,36 @@ import { Items } from '../../providers/providers';
   templateUrl: 'search.html'
 })
 export class SearchPage {
-  
+
   currentItems: any = [];
+  items: string[];
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.initializeItems();
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+  initializeItems() {
+    this.items = [
+      'Dolo 650',
+      'Pregabid Forte',
+      'Calcimax 500',
+      'Telista Plus 40',
+      'Glimapride 500',
+      'Carnisure',
+    ];
+  }
 
-  /**
-   * Perform a service for the proper items.
-   */
-  getItems(ev) {
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the searchbar
     let val = ev.target.value;
-    if (!val || !val.trim()) {
-      this.currentItems = [];
-      return;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
     }
-    this.currentItems = this.items.query({
-      name: val
-    });
   }
-
-  /**
-   * Navigate to the detail page for this item.
-   */
-  openItem(item: Item) {
-    this.navCtrl.push(ItemDetailPage, {
-      item: item
-    });
-  }
-
 }

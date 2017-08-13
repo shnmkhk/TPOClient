@@ -1,45 +1,43 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{ pageTitle }}</ion-title>
+    <ion-title>{{ 'SETTINGS_TITLE' | translate }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+  </ion-item>
 
-  <form [formGroup]="form" *ngIf="settingsReady">
-    <ion-list *ngIf="page == 'main'">
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
-        <ion-toggle formControlName="option1"></ion-toggle>
-      </ion-item>
+  <ion-item>
+    <ion-label fixed>{{ 'ADDRESS_HEADER' | translate }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>{{ 'ADDRESS_LINE_1' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.addr_1" name="addr_1"></ion-input>
+  </ion-item>
 
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION2' | translate }}</ion-label>
-        <ion-input formControlName="option2"></ion-input>
-      </ion-item>
+  <ion-item>
+    <ion-label fixed>{{ 'ADDRESS_LINE_2' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.addr_2" name="addr_2"></ion-input>
+  </ion-item>
 
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION3' | translate }}</ion-label>
-        <ion-select formControlName="option3">
-          <ion-option value="1" checked="true">1</ion-option>
-          <ion-option value="2">2</ion-option>
-          <ion-option value="3">3</ion-option>
-        </ion-select>
-      </ion-item>
+  <ion-item>
+    <ion-label fixed>{{ 'ADDRESS_CITY' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.city" name="city"></ion-input>
+  </ion-item>
 
-      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
-        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
-      </button>
-    </ion-list>
+  <ion-item>
+    <ion-label fixed>{{ 'ADDRESS_PINCODE' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.pincode" name="pincode"></ion-input>
+  </ion-item>
 
-    <ion-list *ngIf="page == 'profile'">
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
-        <ion-input formControlName="option4"></ion-input>
-      </ion-item>
-    </ion-list>
-  </form>
-
+  <ion-item>
+    <ion-label fixed>{{ 'FAVOURITE_PHARMACY' | translate }}</ion-label>
+    <ion-input type="text" [(ngModel)]="account.favourite" name="favourite"></ion-input>
+  </ion-item>
+  <div padding>
+    <button ion-button block color="primary" (click)="logout()">{{ 'LOGOUT' | translate}}</button>
+  </div>
 </ion-content>

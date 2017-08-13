@@ -15,10 +15,17 @@ export class SignupPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { name: string, email: string, password: string } = {
-    name: 'Test Human',
-    email: 'test@example.com',
-    password: 'test'
+  account: { name: string, email: string, password: string, dob: string, mobile: string, 
+  addr_1: string, addr_2: string, city: string, pincode: number } = {
+    name: 'MyFullName',
+    email: 'myid@email.com',
+    password: 'test',
+    dob: '08/16/1985',
+    mobile: '9848012345',
+    addr_1: '#001, Fortune Heights',
+    addr_2: 'Madhapur',
+    city: 'Hyderabad',
+    pincode: 500081
   };
 
   // Our translated text strings
@@ -41,7 +48,7 @@ export class SignupPage {
     }, (err) => {
 
       this.navCtrl.push(MainPage); // TODO: Remove this when you add your signup endpoint
-
+      /*
       // Unable to sign up
       let toast = this.toastCtrl.create({
         message: this.signupErrorString,
@@ -49,6 +56,7 @@ export class SignupPage {
         position: 'top'
       });
       toast.present();
+      */
     });
   }
 }

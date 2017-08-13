@@ -23,7 +23,8 @@ import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core'
 
 @Component({
-  template: `<ion-menu [content]="content">
+  template: `
+  <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
@@ -42,7 +43,7 @@ import { TranslateService } from '@ngx-translate/core'
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage = WelcomePage;
 
   @ViewChild(Nav) nav: Nav;
 
